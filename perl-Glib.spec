@@ -4,11 +4,11 @@
 #
 # TODO:
 # - check BRs
-# - intl descs
 #
 %include	/usr/lib/rpm/macros.perl
 %define	pnam	Glib
 Summary:	Perl Glib bindings
+Summary(pl):	Wi±zania Glib dla Perla
 Name:		perl-Glib
 Version:	0.91
 Release:	0.1
@@ -24,6 +24,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This module provides perl access to Glib and GLib's GObject libraries.
+
+%description -l pl
+Ten modu³ daje dostêp z poziomu Perla do bibliotek GLib i GObject.
 
 %prep
 %setup -q -n %{pnam}-%{version}
@@ -52,5 +55,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/*.pm
 %dir %{perl_vendorarch}/Glib
 %{perl_vendorarch}/Glib
+%dir %{perl_vendorarch}/auto/Glib
 %{perl_vendorarch}/auto/Glib/*
 %{_mandir}/man3/*
