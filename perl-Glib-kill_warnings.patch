@@ -1,0 +1,83 @@
+diff -dur Glib-1.020.orig/GObject.xs Glib-1.020/GObject.xs
+--- Glib-1.020.orig/GObject.xs	2003-11-21 07:31:28.000000000 +0100
++++ Glib-1.020/GObject.xs	2004-01-09 15:31:47.869709011 +0100
+@@ -326,7 +326,7 @@
+ 		nowarn_by_type = g_hash_table_new (g_direct_hash,
+ 		                                   g_direct_equal);
+ 	}
+-	g_hash_table_insert (nowarn_by_type, (gpointer)gtype, (gpointer)nowarn);
++	g_hash_table_insert (nowarn_by_type, GINT_TO_POINTER(gtype), GINT_TO_POINTER(nowarn));
+ 
+ 	G_UNLOCK (nowarn_by_type);
+ }
+@@ -341,8 +341,9 @@
+ 	if (!nowarn_by_type)
+ 		result = FALSE;
+ 	else
+-		result = (gboolean) g_hash_table_lookup (nowarn_by_type,
+-		                                         (gpointer)gtype);
++		result = (gboolean) GPOINTER_TO_INT(
++				g_hash_table_lookup (nowarn_by_type,
++                                         GINT_TO_POINTER(gtype)));
+ 
+ 	G_UNLOCK (nowarn_by_type);
+ 
+@@ -1067,7 +1068,7 @@
+ =cut
+ SV *
+ new_from_pointer (class, pointer, noinc=FALSE)
+-	guint32 pointer
++	gpointer pointer
+ 	gboolean noinc
+     CODE:
+ 	RETVAL = gperl_new_object (G_OBJECT (pointer), noinc);
+@@ -1080,11 +1081,11 @@
+ Complement of C<new_from_pointer>.
+ 
+ =cut
+-guint32
++gpointer
+ get_pointer (object)
+ 	GObject * object
+     CODE:
+-	RETVAL = GPOINTER_TO_UINT (object);
++	RETVAL = object;
+     OUTPUT:
+ 	RETVAL
+ 
+diff -dur Glib-1.020.orig/GType.xs Glib-1.020/GType.xs
+--- Glib-1.020.orig/GType.xs	2003-11-29 04:03:12.000000000 +0100
++++ Glib-1.020/GType.xs	2004-01-09 15:32:08.569779901 +0100
+@@ -611,7 +611,7 @@
+ 	GSignalQuery query;
+ 	gchar * tmp;
+ 	SV * method_name;
+-	guint i;
++	STRLEN i;
+         HV *stash;
+         SV **slot;
+ 	/* see GClosure.xs and gperl_marshal.h for an explanation.  we can't
+Only in Glib-1.020: GType.xs~
+diff -dur Glib-1.020.orig/Glib.xs Glib-1.020/Glib.xs
+--- Glib-1.020.orig/Glib.xs	2003-11-29 04:03:12.000000000 +0100
++++ Glib-1.020/Glib.xs	2004-01-09 15:31:47.869709011 +0100
+@@ -182,7 +182,7 @@
+ {
+ 	GError *error = 0;
+         SV *sv;
+-	int len;
++	gssize len;
+         gchar *str = g_filename_to_utf8 (filename, -1, NULL, &len, &error);
+ 
+         if (!filename)
+diff -dur Glib-1.020.orig/typemap Glib-1.020/typemap
+--- Glib-1.020.orig/typemap	2003-11-21 07:31:28.000000000 +0100
++++ Glib-1.020/typemap	2004-01-09 15:31:47.870708773 +0100
+@@ -47,6 +47,7 @@
+ const guchar *	T_PV
+ gfloat		T_FLOAT
+ gdouble		T_DOUBLE
++gpointer	T_PTR
+ 
+ GObject*	T_GPERL_GENERIC_WRAPPER
+ GObject_ornull*	T_GPERL_GENERIC_WRAPPER
