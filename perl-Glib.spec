@@ -2,9 +2,6 @@
 # Conditional build:
 # _without_tests - do not perform "make test"
 #
-# TODO:
-# - check BRs
-#
 %include	/usr/lib/rpm/macros.perl
 %define	pnam	Glib
 Summary:	Perl Glib bindings
@@ -20,6 +17,7 @@ URL:		http://gtk2-perl.sf.net/
 BuildRequires:	glib2-devel
 BuildRequires:	perl-ExtUtils-Depends
 BuildRequires:	perl-devel >= 5.8.0
+BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
