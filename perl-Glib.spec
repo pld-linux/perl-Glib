@@ -50,7 +50,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README*	
+%doc AUTHORS ChangeLog README*
 %{perl_vendorarch}/*.pm
 %dir %{perl_vendorarch}/Glib
 %{perl_vendorarch}/Glib
