@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 %define	pnam	Glib
@@ -37,13 +37,15 @@ Ten modu³ daje dostêp z poziomu Perla do bibliotek GLib i GObject.
 %{__make} \
 	OPTIMIZE="%{rpmcflags}"
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/Glib/*.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
