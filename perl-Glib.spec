@@ -7,12 +7,12 @@
 Summary:	Perl Glib bindings
 Summary(pl):	Wi±zania Glib dla Perla
 Name:		perl-Glib
-Version:	0.96
-Release:	0.1
+Version:	1.00
+Release:	0.1rc1
 License:	GPL
 Group:		Development/Languages/Perl
-Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
-# Source0-md5:	54f17ccfc648d6a1e78e0bfa901a574e
+Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}rc1.tar.gz
+# Source0-md5:	649a479f3788b929260792b2219b590b
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	glib2-devel
 BuildRequires:	perl-ExtUtils-Depends
@@ -28,7 +28,7 @@ This module provides perl access to Glib and GLib's GObject libraries.
 Ten modu³ daje dostêp z poziomu Perla do bibliotek GLib i GObject.
 
 %prep
-%setup -q -n %{pnam}-%{version}
+%setup -q -n %{pnam}-%{version}rc1
 
 %build
 %{__perl} Makefile.PL \
