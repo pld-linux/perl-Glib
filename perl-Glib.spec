@@ -15,7 +15,7 @@ Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
 # Source0-md5:	5cc525f845d2317d50a8b247b760d83e
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	glib2-devel >= 2.0.0
-BuildRequires:	perl-ExtUtils-Depends
+BuildRequires:	perl-ExtUtils-Depends >= 0.1
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.00
 BuildRequires:	perl-devel >= 5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
