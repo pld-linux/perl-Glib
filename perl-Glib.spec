@@ -14,7 +14,7 @@ Version:	0.91
 Release:	0.1
 License:	GPL
 Group:		Development/Languages/Perl
-Source0:	http://flow.dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
 # Source0-md5:	0a3e8ff992b6b2e79ba18208bea7fb1d
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	glib2-devel
