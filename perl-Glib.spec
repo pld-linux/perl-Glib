@@ -8,7 +8,7 @@ Summary:	Perl Glib bindings
 Summary(pl):	Wi±zania Glib dla Perla
 Name:		perl-Glib
 Version:	1.061
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
@@ -55,7 +55,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README*
 %{perl_vendorarch}/*.pm
 %dir %{perl_vendorarch}/Glib
-%{perl_vendorarch}/Glib
+%{perl_vendorarch}/Glib/*.pm
+%{perl_vendorarch}/Glib/Install
+%{perl_vendorarch}/Glib/Object
 %dir %{perl_vendorarch}/auto/Glib
 %attr(755,root,root) %{perl_vendorarch}/auto/Glib/Glib.so
 %{perl_vendorarch}/auto/Glib/Glib.bs
