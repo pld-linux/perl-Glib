@@ -18,6 +18,7 @@ Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
 # Source0-md5:	0a3e8ff992b6b2e79ba18208bea7fb1d
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	glib2-devel
+BuildRequires:	perl-ExtUtils-Depends
 BuildRequires:	perl-devel >= 5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -56,5 +57,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/Glib
 %{perl_vendorarch}/Glib
 %dir %{perl_vendorarch}/auto/Glib
-%{perl_vendorarch}/auto/Glib/*
+%attr(755,root,root) %{perl_vendorarch}/auto/Glib/Glib.so
+%{perl_vendorarch}/auto/Glib/Glib.bs
 %{_mandir}/man3/*
