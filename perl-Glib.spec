@@ -7,18 +7,20 @@
 Summary:	Perl Glib bindings
 Summary(pl):	Wi±zania Glib dla Perla
 Name:		perl-Glib
-Version:	1.132
+# note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
+Version:	1.140
 Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
-# Source0-md5:	2fd05bd925f58eda026cfdf8bf0d1982
+# Source0-md5:	36a4ba906ae9542b10568501f1f99602
 URL:		http://gtk2-perl.sourceforge.net/
-BuildRequires:	glib2-devel >= 2.12.2
+BuildRequires:	glib2-devel >= 1:2.12.2
 BuildRequires:	perl-ExtUtils-Depends >= 0.201
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.06
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+Requires:	glib2 >= 1:2.12.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,10 +44,9 @@ Ten modu³ daje dostêp z poziomu Perla do bibliotek GLib i GObject.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{perl_archlib}/perllocal.pod
 rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/Glib/*.pod
 rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/Glib/Param/*.pod
 rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Glib/.packlist
