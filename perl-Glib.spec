@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pnam	Glib
 Summary:	Perl Glib bindings
-Summary(pl):	Wi±zania Glib dla Perla
+Summary(pl.UTF-8):   WiÄ…zania Glib dla Perla
 Name:		perl-Glib
 # note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
 Version:	1.142
@@ -26,8 +26,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This module provides perl access to Glib and GLib's GObject libraries.
 
-%description -l pl
-Ten modu³ daje dostêp z poziomu Perla do bibliotek GLib i GObject.
+%description -l pl.UTF-8
+Ten moduÅ‚ daje dostÄ™p z poziomu Perla do bibliotek GLib i GObject.
 
 %prep
 %setup -q -n %{pnam}-%{version}
