@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pnam	Glib
 Summary:	Perl Glib bindings
-Summary(pl.UTF-8):   Wiązania Glib dla Perla
+Summary(pl.UTF-8):	Wiązania Glib dla Perla
 Name:		perl-Glib
 # note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
 Version:	1.142
