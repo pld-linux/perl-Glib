@@ -9,7 +9,7 @@ Summary(pl.UTF-8):	Wiązania Glib dla Perla
 Name:		perl-Glib
 # note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
 Version:	1.162
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
@@ -43,6 +43,7 @@ Ten moduł daje dostęp z poziomu Perla do bibliotek GLib i GObject.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{perl_vendorarch}/{Gnome2,auto/Gnome2}
 
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -66,3 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{perl_vendorarch}/auto/Glib/Glib.so
 %{perl_vendorarch}/auto/Glib/Glib.bs
 %{_mandir}/man3/Glib*.3pm*
+# for Gnome2-related packages
+%dir %{perl_vendorarch}/Gnome2
+%dir %{perl_vendorarch}/auto/Gnome2
