@@ -37,6 +37,7 @@ Ten moduł daje dostęp z poziomu Perla do bibliotek GLib i GObject.
 	INSTALLDIRS=vendor
 
 %{__make} \
+	CC="%{__cc}" \
 	OPTIMIZE="%{rpmcflags}"
 
 %{?with_tests:%{__make} test}
