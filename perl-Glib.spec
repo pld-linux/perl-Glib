@@ -8,12 +8,12 @@ Summary:	Perl Glib bindings
 Summary(pl.UTF-8):	Wiązania Glib dla Perla
 Name:		perl-Glib
 # note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
-Version:	1.222
-Release:	3
+Version:	1.223
+Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
-Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
-# Source0-md5:	2f1af85d768920625f8d4a3ff9b75cc4
+Source0:	http://downloads.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
+# Source0-md5:	cfdeaa8c95448f86c30b505e4701abf1
 URL:		http://gtk2-perl.sourceforge.net/
 BuildRequires:	glib2-devel >= 1:2.12.2
 BuildRequires:	perl-ExtUtils-Depends >= 0.300
@@ -49,9 +49,9 @@ install -d $RPM_BUILD_ROOT%{perl_vendorarch}/{Gnome2,auto/Gnome2}
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/Glib/*.pod
-rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/Glib/Param/*.pod
-rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Glib/.packlist
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/Glib/*.pod
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/Glib/Param/*.pod
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Glib/.packlist
 
 %clean
 rm -rf $RPM_BUILD_ROOT
