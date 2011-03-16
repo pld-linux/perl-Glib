@@ -1,15 +1,15 @@
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define		pnam	Glib
+%include	/usr/lib/rpm/macros.perl
 Summary:	Perl Glib bindings
 Summary(pl.UTF-8):	Wiązania Glib dla Perla
 Name:		perl-Glib
 # note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
 Version:	1.223
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	http://downloads.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
@@ -24,7 +24,7 @@ Requires:	glib2 >= 1:2.12.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This module provides perl access to Glib and GLib's GObject libraries.
+This module provides Perl access to Glib and GLib's GObject libraries.
 
 %description -l pl.UTF-8
 Ten moduł daje dostęp z poziomu Perla do bibliotek GLib i GObject.
@@ -52,6 +52,10 @@ install -d $RPM_BUILD_ROOT%{perl_vendorarch}/{Gnome2,auto/Gnome2}
 %{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/Glib/*.pod
 %{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/Glib/Param/*.pod
 %{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Glib/.packlist
+
+# these should be moved to -devel, if wanted
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/Glib/MakeHelper.pm
+%{__rm} $RPM_BUILD_ROOT%{_mandir}/man3/Glib::MakeHelper.3pm
 
 %clean
 rm -rf $RPM_BUILD_ROOT
