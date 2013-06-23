@@ -35,6 +35,7 @@ Summary:	Development files for Perl Glib bindings
 Summary(pl.UTF-8):	Pliki programistyczne wiązań Glib dla Perla
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
+Requires:	glib2-devel >= 1:2.12.2
 
 %description devel
 Development files for Perl Glib bindings.
