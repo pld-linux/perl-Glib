@@ -79,7 +79,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Glib/Object
 %dir %{perl_vendorarch}/auto/Glib
 %attr(755,root,root) %{perl_vendorarch}/auto/Glib/Glib.so
-%{perl_vendorarch}/auto/Glib/Glib.bs
 %{_mandir}/man3/Glib.3pm*
 %{_mandir}/man3/Glib::BookmarkFile.3pm*
 %{_mandir}/man3/Glib::Boxed.3pm*
