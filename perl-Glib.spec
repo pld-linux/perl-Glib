@@ -8,19 +8,19 @@ Summary:	Perl Glib bindings
 Summary(pl.UTF-8):	Wiązania Glib dla Perla
 Name:		perl-Glib
 # note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
-Version:	1.305
-Release:	3
+Version:	1.320
+Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	http://downloads.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
-# Source0-md5:	75a5d3a93fa8ec8e804a344a2a65507f
+# Source0-md5:	9cb020634d0b4d97152e629b1cadf54d
 URL:		http://gtk2-perl.sourceforge.net/
-BuildRequires:	glib2-devel >= 1:2.12.2
+BuildRequires:	glib2-devel >= 1:2.24.0
 BuildRequires:	perl-ExtUtils-Depends >= 0.300
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.06
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-Requires:	glib2 >= 1:2.12.2
+Requires:	glib2 >= 1:2.24.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,7 +34,7 @@ Summary:	Development files for Perl Glib bindings
 Summary(pl.UTF-8):	Pliki programistyczne wiązań Glib dla Perla
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
-Requires:	glib2-devel >= 1:2.12.2
+Requires:	glib2-devel >= 1:2.24.0
 
 %description devel
 Development files for Perl Glib bindings.
@@ -80,6 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Glib.3pm*
 %{_mandir}/man3/Glib::BookmarkFile.3pm*
 %{_mandir}/man3/Glib::Boxed.3pm*
+%{_mandir}/man3/Glib::Bytes.3pm*
 %{_mandir}/man3/Glib::Error.3pm*
 %{_mandir}/man3/Glib::Flags.3pm*
 %{_mandir}/man3/Glib::KeyFile.3pm*
@@ -94,6 +95,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Glib::Signal.3pm*
 %{_mandir}/man3/Glib::Type.3pm*
 %{_mandir}/man3/Glib::Utils.3pm*
+%{_mandir}/man3/Glib::Variant.3pm*
+%{_mandir}/man3/Glib::VariantType.3pm*
 %{_mandir}/man3/Glib::index.3pm*
 %{_mandir}/man3/Glib::version.3pm*
 # for Gnome2-related packages
