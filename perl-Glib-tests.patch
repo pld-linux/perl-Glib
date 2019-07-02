@@ -1,0 +1,26 @@
+Something started to strip ending newlines from comments...
+--- Glib-1.329/t/g.t.orig	2012-01-06 07:26:40.000000000 +0100
++++ Glib-1.329/t/g.t	2019-07-02 22:02:39.461858950 +0200
+@@ -84,7 +84,7 @@
+ 	eq_array (\@bools, [FALSE, TRUE, FALSE]);
+ 
+ 	ok ($key_file->has_group('locales'));
+-	is ($key_file->get_comment('locales', 'mystring'), "some string\n");
++	is ($key_file->get_comment('locales', 'mystring'), "some string");
+ 	is ($key_file->get_string('locales', 'mystring'), 'Good morning');
+ 	is ($key_file->get_locale_string('locales', 'mystring', 'it'), 'Buongiorno');
+ 
+@@ -94,11 +94,11 @@
+ 	$key_file->set_string_list('listsection', 'stringlist', 'one', 'two', 'three');
+ 	$key_file->set_locale_string('locales', 'mystring', 'en', 'one');
+ 	$key_file->set_comment('locales', 'mystring', 'comment');
+-	is ($key_file->get_comment('locales', 'mystring'), "comment\n");
++	is ($key_file->get_comment('locales', 'mystring'), "comment");
+ 	$key_file->set_comment('locales', undef, "another comment\n");
+ 	is ($key_file->get_comment('locales', undef), "#another comment\n#");
+ 	$key_file->set_comment(undef, undef, 'one comment more');
+-	is ($key_file->get_comment(undef, undef), "one comment more\n");
++	is ($key_file->get_comment(undef, undef), "one comment more");
+ 	$key_file->set_boolean($start_group, 'boolkey', FALSE);
+ 	$key_file->set_value($start_group, 'boolkey', '0');
+ 
