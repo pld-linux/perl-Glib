@@ -3,7 +3,6 @@
 %bcond_without	tests	# do not perform "make test"
 
 %define		pnam	Glib
-%include	/usr/lib/rpm/macros.perl
 Summary:	Perl Glib bindings
 Summary(pl.UTF-8):	Wiązania Glib dla Perla
 Name:		perl-Glib
