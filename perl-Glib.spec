@@ -7,19 +7,20 @@ Summary:	Perl Glib bindings
 Summary(pl.UTF-8):	Wiązania Glib dla Perla
 Name:		perl-Glib
 # note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
-Version:	1.329
+Version:	1.329_2
+%define	fver	%(echo %{version} | tr -d _)
 Release:	2
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
-Source0:	http://downloads.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
-# Source0-md5:	be860965e07065f1188e679fbac83dc0
-Patch0:		%{name}-tests.patch
+Source0:	http://downloads.sourceforge.net/gtk2-perl/%{pnam}-%{fver}.tar.gz
+# Source0-md5:	9fcd0fbb16f35a6bef0827e83d68da04
 URL:		http://gtk2-perl.sourceforge.net/
 BuildRequires:	glib2-devel >= 1:2.24.0
 BuildRequires:	perl-ExtUtils-Depends >= 0.300
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.06
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 Requires:	glib2 >= 1:2.24.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -43,8 +44,7 @@ Development files for Perl Glib bindings.
 Pliki programistyczne wiązań Glib dla Perla.
 
 %prep
-%setup -q -n %{pnam}-%{version}
-%patch0 -p1
+%setup -q -n %{pnam}-%{fver}
 
 %build
 %{__perl} Makefile.PL \
