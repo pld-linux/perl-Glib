@@ -7,13 +7,13 @@ Summary:	Perl Glib bindings
 Summary(pl.UTF-8):	Wiązania Glib dla Perla
 Name:		perl-Glib
 # note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
-Version:	1.329_2
+Version:	1.329_3
 %define	fver	%(echo %{version} | tr -d _)
-Release:	3
+Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	http://downloads.sourceforge.net/gtk2-perl/%{pnam}-%{fver}.tar.gz
-# Source0-md5:	9fcd0fbb16f35a6bef0827e83d68da04
+# Source0-md5:	7f7ce9844fdb30a7320d4881ccdeb3ca
 URL:		http://gtk2-perl.sourceforge.net/
 BuildRequires:	glib2-devel >= 1:2.24.0
 BuildRequires:	perl-ExtUtils-Depends >= 0.300
