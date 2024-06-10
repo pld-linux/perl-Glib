@@ -1,20 +1,20 @@
 #
 # Conditional build:
-%bcond_without	tests	# do not perform "make test"
+%bcond_without	tests	# unit tests
 
 %define		pnam	Glib
 Summary:	Perl Glib bindings
 Summary(pl.UTF-8):	Wiązania Glib dla Perla
 Name:		perl-Glib
 # note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
-Version:	1.329_3
+Version:	1.329_4
 %define	fver	%(echo %{version} | tr -d _)
-Release:	4
+Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
-Source0:	http://downloads.sourceforge.net/gtk2-perl/%{pnam}-%{fver}.tar.gz
-# Source0-md5:	7f7ce9844fdb30a7320d4881ccdeb3ca
-URL:		http://gtk2-perl.sourceforge.net/
+Source0:	https://downloads.sourceforge.net/gtk2-perl/%{pnam}-%{fver}.tar.gz
+# Source0-md5:	ee0b309a6d87f7ede45f05787de1901d
+URL:		https://gtk2-perl.sourceforge.net/
 BuildRequires:	glib2-devel >= 1:2.24.0
 BuildRequires:	perl-ExtUtils-Depends >= 0.300
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.06
