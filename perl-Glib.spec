@@ -9,7 +9,7 @@ Name:		perl-Glib
 # note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
 Version:	1.329_4
 %define	fver	%(echo %{version} | tr -d _)
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	https://downloads.sourceforge.net/gtk2-perl/%{pnam}-%{fver}.tar.gz
